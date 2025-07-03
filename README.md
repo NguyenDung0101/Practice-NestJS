@@ -1,92 +1,103 @@
-# 🐾 Pet Manager API (NestJS + MongoDB)
+# 🐾 API Quản Lý Thú Cưng (NestJS + MongoDB)
 
-A simple RESTful CRUD API built with [NestJS](https://nestjs.com) and MongoDB using Mongoose ODM.
-
----
-
-## 🚀 Features
-
-- Create, Read, Update, Delete (CRUD) pets
-- Connects to MongoDB Atlas (or local MongoDB)
-- Clean modular architecture with NestJS
-- Environment-based configuration using `.env`
+Một API RESTful CRUD đơn giản được xây dựng bằng [NestJS](https://nestjs.com) và MongoDB sử dụng Mongoose ODM.
 
 ---
 
-## 📁 Project Structure
+## 🚀 Tính năng
 
+- Tạo, Đọc, Cập nhật, Xóa (CRUD) thông tin thú cưng
+- Kết nối với MongoDB Atlas (hoặc MongoDB cục bộ)
+- Kiến trúc mô-đun rõ ràng với NestJS
+- Cấu hình dựa trên biến môi trường sử dụng `.env`
+
+---
+
+## 📁 Cấu trúc dự án
+
+```
 src/
 ├── pets/
-│ ├── pets.controller.ts
-│ ├── pets.service.ts
-│ ├── pets.module.ts
-│ └── schemas/
-│ └── pet.schema.ts
+│   ├── pets.controller.ts
+│   ├── pets.service.ts
+│   ├── pets.module.ts
+│   └── schemas/
+│       └── pet.schema.ts
 ├── app.module.ts
-
-yaml
-Sao chép
-Chỉnh sửa
+```
 
 ---
 
-## 📦 Installation & Running
+## 📦 Cài đặt & Chạy
 
-### 1. Clone this repo
+### 1. Tải mã nguồn
 
 ```bash
 git clone https://github.com/your-username/pet-manager.git
 cd pet-manager
-2. Install dependencies
-bash
-Sao chép
-Chỉnh sửa
+```
+
+### 2. Cài đặt các gói phụ thuộc
+
+```bash
 npm install
-3. Add environment variables
-Create a .env file from the example:
+```
 
-bash
-Sao chép
-Chỉnh sửa
+### 3. Thêm biến môi trường
+
+Tạo tệp `.env` từ mẫu:
+
+```bash
 cp .env.example .env
-Edit the .env and update the MongoDB URI.
+```
 
-4. Start the app
-bash
-Sao chép
-Chỉnh sửa
+Chỉnh sửa tệp `.env` và cập nhật URI của MongoDB.
+
+### 4. Khởi động ứng dụng
+
+```bash
 npm run start:dev
-🧪 API Endpoints
-Method	URL	Description
-GET	/pets	Get all pets
-GET	/pets/:id	Get a pet by ID
-POST	/pets	Create a new pet
-PUT	/pets/:id	Update a pet
-DELETE	/pets/:id	Delete a pet
+```
 
-Sample JSON:
-json
-Sao chép
-Chỉnh sửa
+---
+
+## 🧪 Các điểm cuối API
+
+| Phương thức | URL          | Mô tả                     |
+|-------------|--------------|---------------------------|
+| GET         | /pets        | Lấy danh sách thú cưng    |
+| GET         | /pets/:id    | Lấy thông tin thú cưng theo ID |
+| POST        | /pets        | Tạo mới một thú cưng      |
+| PUT         | /pets/:id    | Cập nhật thông tin thú cưng |
+| DELETE      | /pets/:id    | Xóa một thú cưng          |
+
+### JSON mẫu:
+
+```json
 {
   "name": "Tom",
   "type": "Cat",
   "age": 3
 }
-🔐 Environment Variables
-See .env.example for required variables.
+```
 
-📌 License
-This project is open-source and available under the MIT License.
+---
 
-yaml
-Sao chép
-Chỉnh sửa
+## 🔐 Biến môi trường
+
+Xem tệp `.env.example` để biết các biến bắt buộc.
 
 ---
 
 ## 📄 `.env.example`
 
 ```env
-# MongoDB connection string
+# Chuỗi kết nối MongoDB
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
+```
+
+---
+
+## 📌 Giấy phép
+
+Dự án này là mã nguồn mở và được cấp phép theo Giấy phép MIT.
